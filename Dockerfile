@@ -8,8 +8,11 @@ ENV PYTHONUNBUFFERED=1 \
 
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y wkhtmltopdf \
-                       gdal-bin \
-                       libgdal-dev
+    gdal-bin \
+    libgdal-dev \
+    graphviz \
+    libgraphviz-dev \
+    pkg-config
 
 # <=58 will support use_2to3 -> https://stackoverflow.com/questions/69100275/error-while-downloading-the-requirements-using-pip-install-setup-command-use-2
 RUN pip install setuptools==58
